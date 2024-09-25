@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Eventos Deportivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3f; /* Azul marino */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #clock {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .event {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .event h2 {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+        }
+
+        .event p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .event-link {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agenda de Eventos Deportivos</h1>
+            <div id="clock"></div>
+        </header>
+        <main>
+            <div class="event">
+                <h2>Real Madrid vs Barcelona</h2>
+                <p>Fecha: Sábado 17 de agosto</p>
+                <p>Hora: 10:00 AM</p>
+                <a href="https://tvkrash.blogspot.com/p/tnt-chile.html" target="_blank" class="event-link">Más información</a>
+            </div>
+            <div class="event">
+                <h2>Manchester United vs Liverpool</h2>
+                <p>Fecha: Domingo 18 de agosto</p>
+                <p>Hora: 15:00 PM</p>
+                <a href="https://www.example.com/manchester-united-vs-liverpool" target="_blank" class="event-link">Más información</a>
+            </div>
+            <div class="event">
+                <h2>Bayern Munich vs Borussia Dortmund</h2>
+                <p>Fecha: Sábado 24 de agosto</p>
+                <p>Hora: 18:30 PM</p>
+                <a href="https://www.example.com/bayern-munich-vs-borussia-dortmund" target="_blank" class="event-link">Más información</a>
+            </div>
+        </main>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const clock = document.getElementById('clock');
+            clock.textContent = now.toLocaleTimeString();
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
